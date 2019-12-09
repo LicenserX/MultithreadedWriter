@@ -8,18 +8,18 @@ import java.io.OutputStreamWriter;
 
 public class Writer implements Runnable {
 
-    private final String path;
+    private final String relativePath;
 
     private final String message;
 
     public Writer(String path, String message) {
-        this.path = path;
+        this.relativePath = path;
         this.message = message;
     }
 
     @Override
     public void run() {
-        write(path, message);
+        write(relativePath, message);
     }
 
     private static void write(String relativePath, String message) {
